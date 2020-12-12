@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="main">
+      <h1>Vue.js</h1>
+      <img ref="img" src="./assets/AppleOrangeTensorFlowJS/example/apple.jpg" />
+      <p>{{ msg }}</p>
+      <button @click="orange()" class="btn-flat-border">Click!</button>
+    </div>
+    <footer class="footer"><a href="https://i-doctor.sakura.ne.jp/font/?p=45623">WordPressでフリーオリジナルフォント</a></footer>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      msg: "Hello Apple!"
+    }
+  },
+  methods: {
+    orange() {
+      this.msg="Orange is coming!"
+    }
   }
 }
 </script>
@@ -20,7 +32,21 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  margin: 0;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex; 
+  flex-flow: column; 
+  min-height: 100vh;
+}
+#app .main {
+  flex: 1;
+}
+#app .footer {
+  width: 100%;
+  height: 40px; 
+  flex:1;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #cccccc;
 }
 </style>
